@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
     <div class="row">
         {% for treasure in treasures %}
@@ -20,5 +19,22 @@
                 </div><div class="row">
             {% endif %}
         {% endfor %}
-    </div>
+    </div><br>
+<!-- Form for adding new treasures -->
+    {% if user.is_authenticated %}
+        <div class="treasure panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Add Treasure</h3>
+            </div>
+            <div class="panel-body">
+                <form enctype="multipart/form-data" action="post_url/" method="post" >
+                    {% csrf_token %}
+                    <div class="field-wrapper">
+                        {{form.as_p}}
+                    </div>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
