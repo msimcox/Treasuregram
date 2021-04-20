@@ -11,7 +11,7 @@ def detail(request, treasure_id):
     treasure = Treasure.objects.get(id=treasure_id)
     return render(request, 'detail.html', {'treasure': treasure})
 def post_treasure(request):
-    form = TreasureForm(request.POST)
+    form = TreasureForm(request.POST, request.FILES)
     if form.is_valid():
         form.save(commit = True) # In this single line: read all data on form and submit to database
     return HttpResponseRedirect('/')
