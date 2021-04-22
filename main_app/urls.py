@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^user/(\w+)/$', views.profile, name='profile'),
     url(r'^login/$', views.login_view, name='Login'),
     url(r'^logout/$', views.logout_view, name='Logout'),
+    url(r'^like_treasure/$', views.like_treasure, name='like_treasure' ),
 ]
 
 # add to the bottom of your file

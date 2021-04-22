@@ -8,7 +8,6 @@
     </head>
     <body>
         <nav class="navbar navbar-default navbar-static-top text-center">
-            <a href="/"><img src="{% static 'images/logo.png' %}" alt="TreasureGram"></a>
             <a href="/"><img src="{% static "images/logo.png" %}" height="90"  ></a>
             {% if user.is_authenticated %}
                 <a class="navbar-text navbar-right" href="{% url 'profile' user.username %}">{{ user.username }}</a>
@@ -22,7 +21,9 @@
             {% endblock %}
         </main>
         <footer>
-
+            <!-- Nothing was given for this in the course instruction -->
         </footer>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
